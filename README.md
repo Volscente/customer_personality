@@ -10,4 +10,4 @@ The notebook is intended to perform data cleaning process over the dataset marke
 The notebook is intended to perform an Exploratory Data Analysis (EDA) over the dataset marketing_campaign.csv.
 
 ## response_classification
-
+The notebook is intended to perform a binary classification over the 'Response' label.
