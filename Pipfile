@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 pandas = "*"
 plotly = "*"
+sklearn = "*"
+hyperopt = "*"
+xgboost = "*"
+tensorflow = "*"
+scikeras = "*"
 
 [dev-packages]
 
