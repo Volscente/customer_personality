@@ -11,6 +11,7 @@ hyperopt = "*"
 xgboost = "*"
 tensorflow = "*"
 scikeras = "*"
+jupyterlab = "*"
 
 [dev-packages]
 
