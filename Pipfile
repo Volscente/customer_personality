@@ -12,6 +12,7 @@ xgboost = "*"
 tensorflow = "*"
 scikeras = "*"
 jupyterlab = "*"
+mlflow = "*"
 
 [dev-packages]
 
