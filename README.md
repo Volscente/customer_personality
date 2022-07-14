@@ -22,3 +22,9 @@ To install the specified libraries, use the command
 ``` bash
 pipenv install --ignore-pipfile
 ```
+
+## Set Environment Variable
+An environment variable pointing to the root path of the project directory is required
+to ensure the interoperability among different OS.
+
+Set the environment variable **"CUSTOMER_PERSONALITY_PATH"** to the root directory of this repository.
