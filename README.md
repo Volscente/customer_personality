@@ -11,3 +11,14 @@ The notebook is intended to perform an Exploratory Data Analysis (EDA) over the 
 
 ## response_classification
 The notebook is intended to perform a binary classification over the 'Response' label.
+
+# Installation
+
+## Python Requirements
+The project uses [pipenv](https://realpython.com/pipenv-guide/) for managing python libraries and dependencies.
+All the required python libraries can be found in the Pipfile.
+To install the specified libraries, use the command
+
+``` bash
+pipenv install --ignore-pipfile
+```
