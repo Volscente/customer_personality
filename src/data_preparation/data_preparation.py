@@ -10,6 +10,8 @@ class DataPreparation:
         Initialize a DataPreparation object for preparing and cleaning the data to the modeling phase
         """
 
+        # Read Configuration file
+
         # Init instance variables
         self.data = None
 
