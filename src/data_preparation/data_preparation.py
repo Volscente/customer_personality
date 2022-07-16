@@ -1,6 +1,10 @@
 # Import Standard Modules
+import os
 import pandas as pd
 import numpy as np
+
+# Set root path
+os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
 # Import Package Modules
 
