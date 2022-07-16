@@ -5,6 +5,7 @@ import yaml
 # Set root path
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
+
 def read_configuration(file_name):
     """
 
@@ -22,7 +23,7 @@ def read_configuration(file_name):
     except Exception as e:
 
         pass
-    
+
     return configuration
 
 
