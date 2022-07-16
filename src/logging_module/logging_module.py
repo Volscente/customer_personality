@@ -22,4 +22,4 @@ def get_logger(logger_name):
     # Retrieve the requested logger
     logger = logging.getLogger(logger_name)
 
-    return
+    return logger
