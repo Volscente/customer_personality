@@ -19,6 +19,8 @@ def read_configuration(file_name):
     :return:
     """
 
+    logger.info('read_configuration - Start')
+
     try:
         
         # Read configuration file
