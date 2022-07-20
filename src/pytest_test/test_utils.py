@@ -11,4 +11,7 @@ def test_environment_variable(test_data_preparation):
     :return:
     """
     print('Current Dir')
+    print(os.getcwd())
+
+    assert True
 
