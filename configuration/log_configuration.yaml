@@ -18,3 +18,7 @@ loggers:
     level: INFO
     handlers: [ console ]
     propagate: no
+  utils:
+    level: INFO
+    handlers: [ console ]
+    propagate: no
