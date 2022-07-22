@@ -7,11 +7,9 @@ from src.pytest_test.test_utils_fixtures import test_data_preparation
 
 def test_environment_variable(test_data_preparation):
     """
-
+    Test the correct set of the env variables CUSTOMER_PERSONALITY_PATH
     :return:
     """
-    print('Current Dir')
-    print(os.getcwd())
 
-    assert True
+    assert os.getcwd() == os.environ['CUSTOMER_PERSONALITY_PATH']
 
