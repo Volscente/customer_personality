@@ -1,6 +1,7 @@
 # Import Standard Modules
 import os
 import yaml
+import sys
 
 # Set root path
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
@@ -22,6 +23,8 @@ def read_configuration(file_name):
     logger.info('read_configuration - Start')
 
     try:
+
+        logger.info('read_configuration - Reading {}'.format(file_name))
         
         # Read configuration file
         with open('../../configuration/' + file_name) as config_file:
@@ -30,7 +33,11 @@ def read_configuration(file_name):
 
     except Exception as e:
 
-        pass
+        logger.error('read_configuration - Unable to read {}'.format(file_name))
+        logger.error(e)
+        sys.exit(1)
+
+    logger.info('read_configuration - End')
 
     return configuration
 
