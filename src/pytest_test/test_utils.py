@@ -13,3 +13,8 @@ def test_environment_variable(test_data_preparation):
 
     assert os.getcwd() == os.environ['CUSTOMER_PERSONALITY_PATH']
 
+
+def test_read_configuration(test_data_preparation):
+
+    print(test_data_preparation.config)
+
