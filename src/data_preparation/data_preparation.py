@@ -7,6 +7,7 @@ import numpy as np
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
 # Import Package Modules
+from src.utils.utils import read_configuration
 
 
 class DataPreparation:
@@ -17,6 +18,7 @@ class DataPreparation:
         """
 
         # Read Configuration file
+        self.config = read_configuration('config.yaml')
 
         # Init instance variables
         self.data = None
