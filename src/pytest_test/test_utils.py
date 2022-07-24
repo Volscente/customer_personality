@@ -14,7 +14,13 @@ def test_environment_variable(test_data_preparation):
     assert os.getcwd() == os.environ['CUSTOMER_PERSONALITY_PATH']
 
 
-def test_read_configuration(test_data_preparation):
+@pytest.mark.parametrize('test_config_file, test_config, expected_value', [
+    ('config.yaml', 'data_path', './data/marketing_campaign.csv')
+])
+def test_read_configuration():
+    """
+    Test the function src.utils.utils.read_configuration
+    :return:
+    """
 
-    print(test_data_preparation.config)
 
