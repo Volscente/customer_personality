@@ -2,13 +2,17 @@
 import os
 import pytest
 
+# Set root path
+os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
+
 from src.pytest_test.test_utils_fixtures import test_data_preparation
+from src.utils.utils import read_configuration
 
 
 def test_environment_variable(test_data_preparation):
     """
     Test the correct set of the env variables CUSTOMER_PERSONALITY_PATH
-    :return:
+    :return: Boolean
     """
 
     assert os.getcwd() == os.environ['CUSTOMER_PERSONALITY_PATH']
@@ -20,7 +24,10 @@ def test_environment_variable(test_data_preparation):
 def test_read_configuration():
     """
     Test the function src.utils.utils.read_configuration
-    :return:
+    :return: Boolean
     """
+
+    # Read configuration file
+    config = read_configuration()
 
 
