@@ -13,7 +13,7 @@ from src.logging_module.logging_module import get_logger
 logger = get_logger(os.path.basename(__file__).split('.')[0])
 
 
-def read_configuration(file_name: str):
+def read_configuration(file_name: str) -> dict:
     """
 
     :param file_name:
