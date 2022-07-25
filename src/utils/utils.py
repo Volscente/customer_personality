@@ -15,9 +15,9 @@ logger = get_logger(os.path.basename(__file__).split('.')[0])
 
 def read_configuration(file_name: str) -> dict:
     """
-
-    :param file_name:
-    :return:
+    Read and return the specified configuration file from the 'configuration' folder
+    :param file_name: String configuration file name to read
+    :return: Dict configuration
     """
 
     logger.info('read_configuration - Start')
