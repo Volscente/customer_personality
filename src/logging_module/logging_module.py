@@ -7,7 +7,7 @@ import os
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
 
-def get_logger(logger_name):
+def get_logger(logger_name: str) -> logging.Logger:
     """
     Set the configuration for the logging module and return the requested logger
     :param logger_name: String name of the logger to retrieve from 'log_configuration.yaml' fie
