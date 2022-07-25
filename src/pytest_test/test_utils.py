@@ -7,9 +7,10 @@ os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
 from src.pytest_test.test_utils_fixtures import test_data_preparation
 from src.utils.utils import read_configuration
+from src.data_preparation.data_preparation import DataPreparation
 
 
-def test_environment_variable(test_data_preparation):
+def test_environment_variable(test_data_preparation: DataPreparation) -> bool:
     """
     Test the correct set of the env variables CUSTOMER_PERSONALITY_PATH
     :return: Boolean
