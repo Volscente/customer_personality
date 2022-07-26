@@ -1,2 +1,6 @@
 # File Paths
 data_path: './data/marketing_campaign.csv'
+
+# Read Data
+data_separator: '\t'
+data_encoding: 'latin1'
