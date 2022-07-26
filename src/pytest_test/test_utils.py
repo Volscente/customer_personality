@@ -10,10 +10,10 @@ from src.utils.utils import read_configuration
 from src.data_preparation.data_preparation import DataPreparation
 
 
-def test_environment_variable(test_data_preparation: DataPreparation) -> bool:
+def test_environment_variable(test_data_preparation: DataPreparation):
     """
     Test the correct set of the env variables CUSTOMER_PERSONALITY_PATH
-    :return: Boolean
+    :param test_data_preparation:
     """
 
     assert os.getcwd() == os.environ['CUSTOMER_PERSONALITY_PATH']
@@ -22,13 +22,17 @@ def test_environment_variable(test_data_preparation: DataPreparation) -> bool:
 @pytest.mark.parametrize('test_config_file, test_config, expected_value', [
     ('config.yaml', 'data_path', './data/marketing_campaign.csv')
 ])
-def test_read_configuration(test_config_file, ):
+def test_read_configuration(test_config_file: str,
+                            test_config: str,
+                            expected_value: str):
     """
     Test the function src.utils.utils.read_configuration
-    :return: Boolean
+    :param test_config_file: String configuration file name
+    :param test_config: String configuration entry key
+    :param expected_value: String configuration expected value
     """
 
     # Read configuration file
-    config = read_configuration()
+    config = read_configuration(test_config_file)
 
-
+    assert config[test_config] == expected_value
