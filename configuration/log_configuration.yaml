@@ -10,7 +10,7 @@ handlers:
     formatter: standard
     stream: ext://sys.stdout
 loggers:
-  data_preparation:
+  DataPreparation:
     level: INFO
     handlers: [ console ]
     propagate: no

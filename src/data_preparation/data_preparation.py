@@ -10,9 +10,6 @@ os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 from src.utils.utils import read_configuration
 from src.logging_module.logging_module import get_logger
 
-# Setup logger
-logger = get_logger(os.path.basename(__file__).split('.')[0])
-
 
 class DataPreparation:
 
@@ -21,7 +18,11 @@ class DataPreparation:
         Initialize a DataPreparation object for preparing and cleaning the data to the modeling phase
         """
 
-        logger.info('__init__ - Read configuration file')
+        # Setup Logger
+        self.logger = get_logger(__class__.__name__)
+        self.logger.info('__init__ - Instancing the class')
+
+        self.logger.info('__init__ - Read configuration file')
 
         # Read Configuration file
         self.config = read_configuration(configuration_file)
@@ -35,7 +36,7 @@ class DataPreparation:
         :return: Write prepared data as a .CSV file
         """
 
-        logger.info('run - Running the pipeline')
+        self.logger.info('run - Running the pipeline')
 
         # Read data
         pass
