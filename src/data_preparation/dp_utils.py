@@ -1,4 +1,4 @@
-# Import Standard Libraries
+# Import Standard Modules
 import os
 import sys
 import pandas as pd
@@ -30,10 +30,19 @@ def read_data(data_path: str,
 
         logger.info('read_data - Read data from {}'.format(data_path))
 
+        # Read data from CSV
+        data = pd.read_csv(data_path,
+                           sep=data_separator,
+                           encoding=data_encoding)
+
     except Exception as e:
 
         logger.error('read_data - Unable to read data from {}'.format(data_path))
         logger.error(e)
         sys.exit(1)
+
+    logger.info('read_data - End')
+
+    return data
 
 
