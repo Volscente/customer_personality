@@ -12,13 +12,13 @@ from src.utils.utils import read_configuration
 
 class DataPreparation:
 
-    def __init__(self):
+    def __init__(self, configuration_file='config.yaml'):
         """
         Initialize a DataPreparation object for preparing and cleaning the data to the modeling phase
         """
 
         # Read Configuration file
-        self.config = read_configuration('config.yaml')
+        self.config = read_configuration(configuration_file)
 
         # Init instance variables
         self.data = None
