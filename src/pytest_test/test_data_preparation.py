@@ -34,4 +34,4 @@ def test_read_data(test_configuration: dict,
     # Select record
     record = data[data['ID'] == test_id][['Year_Birth', 'Education']]
 
-    assert record['Year_Birth'] == expected_year_birth and record['Education'] == expected_education
+    assert record['Year_Birth'].iloc[0] == expected_year_birth and record['Education'].iloc[0] == expected_education
