@@ -37,4 +37,5 @@ def test_read_data(test_configuration: dict,
     assert record['Year_Birth'].iloc[0] == expected_year_birth and record['Education'].iloc[0] == expected_education
 
 
-def test_read_data_exceptions()
+def test_read_data_exceptions():
+    pass
