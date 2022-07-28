@@ -35,3 +35,6 @@ def test_read_data(test_configuration: dict,
     record = data[data['ID'] == test_id][['Year_Birth', 'Education']]
 
     assert record['Year_Birth'].iloc[0] == expected_year_birth and record['Education'].iloc[0] == expected_education
+
+
+def test_read_data_exceptions()
