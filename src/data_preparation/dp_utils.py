@@ -39,7 +39,7 @@ def read_data(data_path: str,
 
         logger.error('read_data - Unable to read data from {}'.format(data_path))
         logger.error(e)
-        sys.exit(1)
+        raise
 
     else:
 
