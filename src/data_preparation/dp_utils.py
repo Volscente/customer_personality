@@ -45,7 +45,9 @@ def read_data(data_path: str,
 
         logger.info('read_data - Data read successfully')
 
-    logger.info('read_data - End')
+    finally:
+
+        logger.info('read_data - End')
 
     return data
 
