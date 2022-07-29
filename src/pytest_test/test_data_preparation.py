@@ -37,5 +37,13 @@ def test_read_data(test_configuration: dict,
     assert record['Year_Birth'].iloc[0] == expected_year_birth and record['Education'].iloc[0] == expected_education
 
 
-def test_read_data_exceptions():
-    pass
+@pytest.mark.parametrize('test_data_path, test_data_separator, expected_error', [
+    ('./data/wrong_marketing_campaign.csv', '\t', SystemExit)
+])
+def test_read_data_exceptions(test_data_path: str,
+                              test_data_separator: str,
+                              expected_error: SystemExit):
+
+    with pytest.raises(expected_error):
+
+        read_data(test_data_path, test_data_separator, 'latin1')
