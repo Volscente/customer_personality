@@ -1,4 +1,6 @@
 # Import Standard Modules
+import sys
+
 import pytest
 import os
 
@@ -42,7 +44,7 @@ def test_read_data(test_configuration: dict,
 ])
 def test_read_data_exceptions(test_data_path: str,
                               test_data_separator: str,
-                              expected_error: SystemExit):
+                              expected_error: Exception):
 
     with pytest.raises(expected_error):
 
