@@ -37,6 +37,10 @@ def read_configuration(file_name: str) -> dict:
         logger.error(e)
         sys.exit(1)
 
+    else:
+
+        logger.info('read_configuration - Configuration file {} read successfully'.format(file_name))
+
     logger.info('read_configuration - End')
 
     return configuration
