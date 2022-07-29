@@ -41,6 +41,10 @@ def read_data(data_path: str,
         logger.error(e)
         sys.exit(1)
 
+    else:
+
+        logger.info('read_data - Data read successfully')
+
     logger.info('read_data - End')
 
     return data
