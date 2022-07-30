@@ -36,3 +36,14 @@ def test_read_configuration(test_config_file: str,
     config = read_configuration(test_config_file)
 
     assert config[test_config] == expected_value
+
+
+@pytest.mark.parametrize('test_config_file, expected_error', [
+    ('wrong_config.config', FileNotFoundError)
+])
+def test_read_configuration_exception(test_config_file: str,
+                                      expected_error: FileNotFoundError):
+
+    with pytest.raises(expected_error):
+
+        read_configuration(test_config_file)
