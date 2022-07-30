@@ -40,11 +40,11 @@ def test_read_data(test_configuration: dict,
 
 
 @pytest.mark.parametrize('test_data_path, test_data_separator, expected_error', [
-    ('./data/wrong_marketing_campaign.csv', '\t', SystemExit)
+    ('./data/wrong_marketing_campaign.csv', '\t', FileNotFoundError)
 ])
-def test_read_data_exceptions(test_data_path: str,
-                              test_data_separator: str,
-                              expected_error: Exception):
+def test_read_data_exception(test_data_path: str,
+                             test_data_separator: str,
+                             expected_error: FileNotFoundError):
 
     with pytest.raises(expected_error):
 
