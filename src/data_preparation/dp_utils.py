@@ -35,11 +35,17 @@ def read_data(data_path: str,
                            sep=data_separator,
                            encoding=data_encoding)
 
+    except FileNotFoundError as e:
+
+        logger.error('read_data - File {} not found'.format(data_path))
+        logger.error(e)
+        raise FileNotFoundError
+
     except Exception as e:
 
-        logger.error('read_data - Unable to read data from {}'.format(data_path))
+        logger.error('read_data - Unable to read file {}'.format(data_path))
         logger.error(e)
-        raise
+        sys.exit(1)
 
     else:
 
