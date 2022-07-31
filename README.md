@@ -28,3 +28,7 @@ An environment variable pointing to the root path of the project directory is re
 to ensure the interoperability among different OS.
 
 Set the environment variable **"CUSTOMER_PERSONALITY_PATH"** to the root directory of this repository.
+
+``` bash
+export CUSTOMER_PERSONALITY_PATH="<absolute_path_to_root_directory"
+```
