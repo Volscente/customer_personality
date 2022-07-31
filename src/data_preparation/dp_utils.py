@@ -71,14 +71,16 @@ def remove_useless_columns(data: pd.DataFrame,
 
     try:
 
-        logger.info('remove_useless_columns - Removing following columns from the dataframe')
+        logger.info('remove_useless_columns - Removing following columns from the Dataframe')
         logger.info('remove_useless_columns - {}'.format(useless_columns))
 
-    except Exception as e:
+    except KeyError as e:
 
-        logger.error('read_data - Unable to read file {}'.format(data_path))
+        logger.error('read_data - Key not Found among the Dataframe columns')
         logger.error(e)
-        sys.exit(1)
+        raise KeyError
+
+    
 
 
 
