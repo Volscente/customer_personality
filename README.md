@@ -32,3 +32,5 @@ Set the environment variable **"CUSTOMER_PERSONALITY_PATH"** to the root directo
 ``` bash
 export CUSTOMER_PERSONALITY_PATH="<absolute_path_to_root_directory"
 ```
+
+**NOTE:** Update the profile file of your shell for permanently set the environment variable.
