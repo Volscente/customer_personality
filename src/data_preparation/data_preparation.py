@@ -9,6 +9,7 @@ os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 # Import Package Modules
 from src.utils.utils import read_configuration
 from src.logging_module.logging_module import get_logger
+from src.data_preparation.dp_utils import read_data
 
 
 class DataPreparation:
@@ -39,4 +40,7 @@ class DataPreparation:
         self.logger.info('run - Running the pipeline')
 
         # Read data
-        pass
+        self.data = read_data(self.config['data_path'],
+                              self.config['data_separator'],
+                              self.config['data_encoding'])
+        
