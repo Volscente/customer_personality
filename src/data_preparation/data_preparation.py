@@ -43,4 +43,4 @@ class DataPreparation:
         self.data = read_data(self.config['data_path'],
                               self.config['data_separator'],
                               self.config['data_encoding'])
-        
+

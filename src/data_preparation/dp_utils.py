@@ -28,7 +28,7 @@ def read_data(data_path: str,
 
     try:
 
-        logger.info('read_data - Read data from {}'.format(data_path))
+        logger.info('read_data - Reading data from {}'.format(data_path))
 
         # Read data from CSV
         data = pd.read_csv(data_path,
@@ -56,5 +56,22 @@ def read_data(data_path: str,
         logger.info('read_data - End')
 
     return data
+
+
+def remove_useless_columns(data: pd.DataFrame,
+                           useless_columns: list) -> pd.DataFrame:
+    """
+
+    :param data:
+    :param useless_columns:
+    :return:
+    """
+
+    logger.info('remove_useless_columns - Start')
+
+    try:
+
+        logger.info('remove_useless_columns - Start')
+
 
 
