@@ -61,10 +61,10 @@ def read_data(data_path: str,
 def remove_useless_columns(data: pd.DataFrame,
                            useless_columns: list) -> pd.DataFrame:
     """
-
-    :param data:
-    :param useless_columns:
-    :return:
+    Drop the columns 'useless_columns' from the Pandas DataFrame 'data'
+    :param data: Pandas DataFrame of data
+    :param useless_columns: List of columns to drop
+    :return: Pandas DataFrame of data without the dropped columns
     """
 
     logger.info('remove_useless_columns - Start')
@@ -74,13 +74,29 @@ def remove_useless_columns(data: pd.DataFrame,
         logger.info('remove_useless_columns - Removing following columns from the Dataframe')
         logger.info('remove_useless_columns - {}'.format(useless_columns))
 
+        # Drop useless_columns from the data Dataframe
+        data_cleaned = data.drop(useless_columns,
+                                 axis=1)
+
     except KeyError as e:
 
-        logger.error('read_data - Key not Found among the Dataframe columns')
+        logger.error('remove_useless_columns - Key not Found among the Dataframe columns')
         logger.error(e)
         raise KeyError
 
-    
+    except Exception as e:
 
+        logger.error('remove_useless_columns - Unable to drop Useless columns from the Dataframe')
+        logger.error(e)
+        sys.exit(1)
 
+    else:
+
+        logger.info('remove_useless_columns - Useless columns successfully removed')
+
+    finally:
+
+        logger.info('remove_useless_columns - End')
+
+    return data_cleaned
 
