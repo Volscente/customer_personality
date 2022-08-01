@@ -4,3 +4,8 @@ data_path: './data/marketing_campaign.csv'
 # Read Data
 data_separator: '\t'
 data_encoding: 'latin1'
+
+# Data Preparation
+useless_columns: ['Z_CostContact',
+                  'Z_Revenue']
+
