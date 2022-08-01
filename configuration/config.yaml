@@ -1,4 +1,5 @@
 # File Paths
+data_folder: './data/'
 data_path: './data/marketing_campaign.csv'
 
 # Read Data
