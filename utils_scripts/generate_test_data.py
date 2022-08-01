@@ -10,14 +10,17 @@ from src.utils.utils import read_configuration
 from src.data_preparation.dp_utils import read_data, remove_useless_columns
 
 
-def generate_test_data(sample_size=10):
+def generate_test_data(config_file: str,
+                       sample_size: int = 10) -> None:
 
-    pass
+    # Read configuration
+    config = read_configuration(config_file)
 
 
 def main():
 
-    generate_test_data(20)
+    generate_test_data(config_file='config.yaml',
+                       sample_size=20)
 
 
 main()
