@@ -49,3 +49,8 @@ def test_read_data_exception(test_data_path: str,
     with pytest.raises(expected_error):
 
         read_data(test_data_path, test_data_separator, 'latin1')
+
+
+def test_remove_useless_columns(test_configuration):
+
+    pass
