@@ -7,6 +7,7 @@ import pandas as pd
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
 from src.utils.utils import read_configuration
+from src.data_preparation.dp_utils import read_data
 
 
 @pytest.fixture
@@ -24,5 +25,10 @@ def test_configuration() -> dict:
 
 @pytest.fixture
 def test_data(test_configuration) -> pd.DataFrame:
-    pass
 
+    # Read test data
+    test_data = read_data(test_configuration['test_data_path'],
+                          test_configuration['data_separator'],
+                          test_configuration['data_encoding'])
+
+    return test_data
