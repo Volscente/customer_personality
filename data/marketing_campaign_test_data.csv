@@ -1,0 +1,21 @@
+ID	Year_Birth	Education	Marital_Status	Income	Kidhome	Teenhome	Dt_Customer	Recency	MntWines	MntFruits	MntMeatProducts	MntFishProducts	MntSweetProducts	MntGoldProds	NumDealsPurchases	NumWebPurchases	NumCatalogPurchases	NumStorePurchases	NumWebVisitsMonth	AcceptedCmp3	AcceptedCmp4	AcceptedCmp5	AcceptedCmp1	AcceptedCmp2	Complain	Z_CostContact	Z_Revenue	Response
+3900	1972	Graduation	Married	65685.0	0	1	29-03-2014	54	642	14	49	0	7	57	1	9	2	9	5	0	0	0	0	0	0	3	11	0
+5610	1965	Graduation	Together	33456.0	1	1	21-04-2014	58	7	3	10	8	1	7	2	1	0	3	7	0	0	0	0	0	0	3	11	0
+4547	1960	Graduation	Together	13672.0	1	1	17-04-2013	86	6	2	9	2	1	5	2	1	0	3	8	0	0	0	0	0	0	3	11	0
+9216	1971	Graduation	Married	35788.0	1	1	23-01-2014	34	23	2	11	3	1	4	2	2	0	3	6	0	0	0	0	0	0	3	11	0
+1459	1966	PhD	Married	69063.0	0	1	07-11-2012	16	666	35	124	69	8	26	1	5	3	5	3	0	0	0	0	0	0	3	11	0
+5010	1988	Graduation	Single	25008.0	1	0	02-02-2014	72	2	8	8	6	1	9	2	1	0	3	8	0	0	0	0	0	0	3	11	0
+310	1970	Master	Married	61872.0	0	1	13-12-2013	81	330	5	159	36	27	16	4	4	4	9	4	0	0	0	0	0	0	3	11	0
+3202	1987	PhD	Married	51563.0	0	0	01-10-2012	60	1166	0	48	0	0	36	1	4	4	10	8	0	1	1	0	0	0	3	11	0
+1137	1964	Graduation	Single	81246.0	0	0	29-12-2013	87	398	190	537	61	156	37	1	4	5	7	1	1	0	0	1	0	0	3	11	0
+8182	1984	Graduation	Married	23228.0	1	0	05-01-2014	91	53	3	49	7	4	5	4	3	0	4	8	0	0	0	0	0	0	3	11	0
+6864	1989	Master	Divorced	10979.0	0	0	22-05-2014	34	8	4	10	2	2	4	2	3	0	3	5	0	0	0	0	0	0	3	11	0
+4240	1978	Graduation	Married	17345.0	1	0	03-11-2012	79	4	9	16	17	0	12	2	2	1	2	8	0	0	0	0	0	0	3	11	0
+4406	1970	Graduation	Together	67419.0	0	1	16-01-2013	29	846	84	352	91	56	42	4	9	4	8	5	0	0	0	0	0	0	3	11	0
+9931	1963	PhD	Married	4023.0	1	1	23-06-2014	29	5	0	1	1	1	1	15	0	0	0	19	0	0	0	0	0	0	3	11	0
+4114	1964	Master	Married	79143.0	0	0	11-08-2012	2	650	37	780	27	167	32	1	6	9	13	3	0	0	0	0	0	0	3	11	0
+3117	1955	Graduation	Single		0	1	18-10-2013	95	264	0	21	12	6	147	3	6	1	5	7	0	0	0	0	0	0	3	11	0
+7232	1973	Graduation	Widow	42429.0	0	1	11-02-2014	99	55	0	6	2	0	4	2	1	1	3	5	0	0	0	0	0	0	3	11	0
+4690	1953	Graduation	Married	50725.0	0	1	13-02-2013	45	443	10	75	0	10	48	4	8	1	8	8	0	0	0	0	0	0	3	11	0
+2694	1967	Graduation	Married	42664.0	0	1	18-03-2014	44	21	0	3	0	0	0	1	1	0	3	6	0	0	0	0	0	0	3	11	0
+4138	1962	Graduation	Single	76624.0	0	1	24-05-2014	68	411	106	147	54	115	66	1	5	10	7	1	1	0	0	0	0	0	3	11	0

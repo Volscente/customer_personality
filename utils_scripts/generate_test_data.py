@@ -24,13 +24,9 @@ def generate_test_data(config_file: str,
     # Sample data
     data_sample = data.sample(sample_size)
 
-    separator = str(config['data_separator'])
-
-    print(separator)
-
     # Write to CSV file
     data_sample.to_csv(config['data_folder'] + test_data_file,
-                       sep=''+separator,
+                       sep='\t',
                        encoding=config['data_encoding'],
                        index=False)
 
