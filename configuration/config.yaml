@@ -1,6 +1,7 @@
 # File Paths
 data_folder: './data/'
 data_path: './data/marketing_campaign.csv'
+test_data_path: './data/marketing_campaign_test_data.csv'
 
 # Read Data
 data_separator: '\t'

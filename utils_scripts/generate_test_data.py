@@ -25,7 +25,7 @@ def generate_test_data(config_file: str,
     data_sample = data.sample(sample_size)
 
     # Write to CSV file
-    data_sample.to_csv(config['data_folder'] + test_data_file,
+    data_sample.to_csv(config['test_data_path'],
                        sep='\t',
                        encoding=config['data_encoding'],
                        index=False)
