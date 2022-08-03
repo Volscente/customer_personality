@@ -1,6 +1,7 @@
 # Import Standard Modules
 import pytest
 import os
+import pandas as pd
 
 # Set root path
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
@@ -21,4 +22,7 @@ def test_configuration() -> dict:
     return configuration
 
 
+@pytest.fixture
+def test_data(test_configuration) -> pd.DataFrame:
+    pass
 
