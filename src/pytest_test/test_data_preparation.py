@@ -1,14 +1,15 @@
 # Import Standard Modules
 import sys
 
+import pandas as pd
 import pytest
 import os
 
 # Set root path
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
-from src.data_preparation.dp_utils import read_data
-from src.pytest_test.test_data_preparation_fixtures import test_configuration
+from src.data_preparation.dp_utils import read_data, remove_useless_columns
+from src.pytest_test.test_data_preparation_fixtures import test_configuration, test_data
 
 
 @pytest.mark.parametrize('test_id, expected_year_birth, expected_education', [
@@ -45,12 +46,29 @@ def test_read_data(test_configuration: dict,
 def test_read_data_exception(test_data_path: str,
                              test_data_separator: str,
                              expected_error: FileNotFoundError):
+    """
+    Test exception triggers for the function src.data_preparation.dp_utils.read_data
+    :param test_data_path: String test data path
+    :param test_data_separator: String separator character
+    :param expected_error: FileNotFoundError exception
+    """
 
     with pytest.raises(expected_error):
 
         read_data(test_data_path, test_data_separator, 'latin1')
 
 
-def test_remove_useless_columns(test_configuration):
+@pytest.mark.parametrize('useless_column', test_configuration['useless_columns'])
+def test_remove_useless_columns(test_data: pd.DataFrame,
+                                test_configuration: dict):
 
-    pass
+    # Remove useless columns
+    test_data_cleaned = remove_useless_columns(test_data,
+                                               test_configuration['useless_columns'])
+
+    # Retrieve the DataFrame columns
+    test_data_columns = test_data_cleaned.columns
+
+
+
+
