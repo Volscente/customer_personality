@@ -9,7 +9,7 @@ os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 # Import Package Modules
 from src.utils.utils import read_configuration
 from src.logging_module.logging_module import get_logger
-from src.data_preparation.dp_utils import read_data
+from src.data_preparation.dp_utils import read_data, remove_useless_columns
 
 
 class DataPreparation:
@@ -43,4 +43,7 @@ class DataPreparation:
         self.data = read_data(self.config['data_path'],
                               self.config['data_separator'],
                               self.config['data_encoding'])
+
+        # Remove useless columns
+        self.data = remove_useless_columns(self.data, self.config['useless_columns'])
 
