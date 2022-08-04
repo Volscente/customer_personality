@@ -60,6 +60,11 @@ def test_read_data_exception(test_data_path: str,
 
 def test_remove_useless_columns(test_data: pd.DataFrame,
                                 test_configuration: dict):
+    """
+    Test the function src.data_preparation.dp_utils.remove_useless_columns
+    :param test_data: Pandas DataFrame of test data
+    :param test_configuration: Dictionary configuration object
+    """
 
     # Remove useless columns
     test_data_cleaned = remove_useless_columns(test_data,
@@ -80,6 +85,8 @@ def test_remove_useless_columns(test_data: pd.DataFrame,
 
     assert removed
 
+
+def test_remove_useless_columns_exceptions()
 
 
 
