@@ -86,7 +86,22 @@ def test_remove_useless_columns(test_data: pd.DataFrame,
     assert removed
 
 
-def test_remove_useless_columns_exceptions()
+@pytest.mark.parametrize('test_useless_column, expected_error', [
+    ('wrong_useless_column', KeyError)
+])
+def test_remove_useless_columns_exceptions(test_data: pd.DataFrame,
+                                           test_useless_column: str,
+                                           expected_error: KeyError):
+    """
+    Test exception triggers for the function src.data_preparation.dp_utils.remove_useless_columns
+    :param test_data: Pandas DataFrame of test data
+    :param test_useless_column: String column name not in test_data
+    :param expected_error: KeyError expected exception
+    """
+
+    with pytest.raises(expected_error):
+
+        remove_useless_columns(test_data, test_useless_column)
 
 
 
