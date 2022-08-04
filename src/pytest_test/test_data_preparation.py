@@ -58,16 +58,17 @@ def test_read_data_exception(test_data_path: str,
         read_data(test_data_path, test_data_separator, 'latin1')
 
 
-@pytest.mark.parametrize('useless_column', test_configuration['useless_columns'])
 def test_remove_useless_columns(test_data: pd.DataFrame,
                                 test_configuration: dict):
 
-    # Remove useless columns
-    test_data_cleaned = remove_useless_columns(test_data,
-                                               test_configuration['useless_columns'])
+    # # Remove useless columns
+    # test_data_cleaned = remove_useless_columns(test_data,
+    #                                            test_configuration['useless_columns'])
+    #
+    # # Retrieve the DataFrame columns
+    # test_data_columns = test_data_cleaned.columns
 
-    # Retrieve the DataFrame columns
-    test_data_columns = test_data_cleaned.columns
+    print()
 
 
 
