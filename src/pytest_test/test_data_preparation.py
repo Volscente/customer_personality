@@ -61,14 +61,24 @@ def test_read_data_exception(test_data_path: str,
 def test_remove_useless_columns(test_data: pd.DataFrame,
                                 test_configuration: dict):
 
-    # # Remove useless columns
-    # test_data_cleaned = remove_useless_columns(test_data,
-    #                                            test_configuration['useless_columns'])
-    #
-    # # Retrieve the DataFrame columns
-    # test_data_columns = test_data_cleaned.columns
+    # Remove useless columns
+    test_data_cleaned = remove_useless_columns(test_data,
+                                               test_configuration['useless_columns'])
 
-    print()
+    # Retrieve the DataFrame columns
+    test_data_columns = test_data_cleaned.columns
+
+    # Initialize a bool for checking if the columns have been correctly dropped
+    removed = True
+
+    # Loop over the columns to remove
+    for useless_column in test_configuration['useless_columns']:
+
+        if useless_column in test_data_columns:
+
+            removed = False
+
+    assert removed
 
 
 
