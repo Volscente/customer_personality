@@ -111,3 +111,26 @@ def compute_interquartile_range(data: pd.DataFrame,
     :param margin: Float of margin to apply to the upper and lower limits computation
     :return: (Float, Float) of lower and upper limits of the IQR
     """
+
+    logger.info('compute_interquartile_range - Start')
+
+    try:
+
+        logger.info('compute_interquartile_range - Computing the Q1 and Q3')
+
+        # Compute Q1 and Q3
+        q1 = data[iqr_columns].quantile(0.25)
+        q3 = data[iqr_columns].quantile(0.75)
+
+    except Exception as e:
+
+        logger.error('compute_interquartile_range - Unable to compute Q1 and Q3')
+        logger.error(e)
+        sys.exit(1)
+
+    else:
+
+        logger.info('compute_interquartile_range - Successfully computed the Q1 and Q3')
+
+    #
+
