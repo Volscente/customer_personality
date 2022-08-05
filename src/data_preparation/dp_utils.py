@@ -100,3 +100,14 @@ def remove_useless_columns(data: pd.DataFrame,
 
     return data_cleaned
 
+
+def compute_interquartile_range(data: pd.DataFrame,
+                                iqr_columns: list,
+                                margin: float = 1.5) -> tuple[float, float]:
+    """
+    Computes the upper and lower Interquartile Range limits
+    :param data: Pandas DataFrame fo data for which compute the IQR
+    :param iqr_columns: List of columns of the data for which compute the IQR
+    :param margin: Float of margin to apply to the upper and lower limits computation
+    :return: (Float, Float) of lower and upper limits of the IQR
+    """
