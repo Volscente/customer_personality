@@ -7,7 +7,21 @@ test_data_path: './data/marketing_campaign_test_data.csv'
 data_separator: '\t'
 data_encoding: 'latin1'
 
-# Data Preparation
+# Columns to remove
 useless_columns: ['Z_CostContact',
                   'Z_Revenue']
+
+# Define the list of columns for which compute the IQR
+iqr_columns: ['Year_Birth',
+              'Income',
+              'MntWines',
+              'MntFruits',
+              'MntMeatProducts',
+              'MntFishProducts',
+              'MntSweetProducts',
+              'MntGoldProds',
+              'NumDealsPurchases',
+              'NumWebPurchases',
+              'NumCatalogPurchases',
+              'NumWebVisitsMonth']
 
