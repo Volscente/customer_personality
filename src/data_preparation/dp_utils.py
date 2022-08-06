@@ -114,9 +114,10 @@ def compute_interquartile_range(data: pd.DataFrame,
 
     logger.info('compute_interquartile_range - Start')
 
+    # Compute Q1 and Q3
     try:
 
-        logger.info('compute_interquartile_range - Computing the Q1 and Q3')
+        logger.info('compute_interquartile_range - Computing Q1 and Q3')
 
         # Compute Q1 and Q3
         q1 = data[iqr_columns].quantile(0.25)
@@ -130,7 +131,48 @@ def compute_interquartile_range(data: pd.DataFrame,
 
     else:
 
-        logger.info('compute_interquartile_range - Successfully computed the Q1 and Q3')
+        logger.info('compute_interquartile_range - Successfully computed Q1 and Q3')
 
-    #
+    # Compute the IQR
+    try:
+
+        logger.info('compute_interquartile_range - Computing the IQR')
+
+        # Compute the IQR
+        iqr = q3 - q1
+
+    except Exception as e:
+
+        logger.error('compute_interquartile_range - Unable to compute the IQR')
+        logger.error(e)
+        sys.exit(1)
+
+    else:
+
+        logger.info('compute_interquartile_range - Successfully computed the IQR')
+
+    # Compute the lower and upper filtering bounds
+    try:
+
+        logger.info('compute_interquartile_range - Computing the upper and lower bounds')
+
+        # Compute the lower and upper filtering bounds
+        lower_filtering_bound = q1 - 1.5 * iqr
+        upper_filtering_bound = q3 + 1.5 * iqr
+
+    except Exception as e:
+
+        logger.error('compute_interquartile_range - Unable to compute the upper and lower bounds')
+        logger.error(e)
+        sys.exit(1)
+
+    else:
+
+        logger.info('compute_interquartile_range - Successfully computed the upper and lower bounds')
+
+    finally:
+
+        logger.info('compute_interquartile_range - End')
+
+    return lower_filtering_bound, upper_filtering_bound
 
