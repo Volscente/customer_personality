@@ -8,7 +8,7 @@ import os
 # Set root path
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
-from src.data_preparation.dp_utils import read_data, remove_useless_columns
+from src.data_preparation.dp_utils import read_data, remove_useless_columns, compute_interquartile_range
 from src.pytest_test.test_data_preparation_fixtures import test_configuration, test_data
 
 
@@ -103,5 +103,10 @@ def test_remove_useless_columns_exceptions(test_data: pd.DataFrame,
 
         remove_useless_columns(test_data, test_useless_column)
 
+
+@pytest.mark.parametrize('test_iqr_column, expected_lower_bound, expected_upper_bound', [
+    ()
+])
+def test_compute_interquartile_range(test_data: pd.DataFrame):
 
 
