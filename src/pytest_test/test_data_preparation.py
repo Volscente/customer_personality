@@ -1,6 +1,6 @@
 # Import Standard Modules
 import sys
-
+import math
 import pandas as pd
 import pytest
 import os
@@ -105,8 +105,20 @@ def test_remove_useless_columns_exceptions(test_data: pd.DataFrame,
 
 
 @pytest.mark.parametrize('test_iqr_column, expected_lower_bound, expected_upper_bound', [
-    ()
+    (['Year_Birth'], 1948, 1991),
+    (['Income'], -3336, 106592)
 ])
-def test_compute_interquartile_range(test_data: pd.DataFrame):
+def test_compute_interquartile_range(test_data: pd.DataFrame,
+                                     test_iqr_column: list,
+                                     expected_lower_bound: int,
+                                     expected_upper_bound: int):
 
+    # Compute the lower and upper IQR bounds
+    computed_lower_bound, computed_upper_bound = compute_interquartile_range(test_data, test_iqr_column)
+
+    # Ceiling values
+    computed_lower_bound = math.ceil(computed_lower_bound)
+    computed_upper_bound = math.ceil(computed_upper_bound)
+
+    assert computed_lower_bound == expected_lower_bound and computed_upper_bound == expected_upper_bound
 
