@@ -112,6 +112,13 @@ def test_compute_interquartile_range(test_data: pd.DataFrame,
                                      test_iqr_column: list,
                                      expected_lower_bound: int,
                                      expected_upper_bound: int):
+    """
+    Test the function src.data_preparation.dp_utils.compute_interquartile_range
+    :param test_data: Pandas DataFrame of test data
+    :param test_iqr_column: List of column for which compute the IQR bounds
+    :param expected_lower_bound: Integer rounded expected lower bound
+    :param expected_upper_bound: Integer rounded expected upper bound 
+    """
 
     # Compute the lower and upper IQR bounds
     computed_lower_bound, computed_upper_bound = compute_interquartile_range(test_data, test_iqr_column)
