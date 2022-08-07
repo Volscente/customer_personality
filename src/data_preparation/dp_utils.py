@@ -177,6 +177,59 @@ def compute_interquartile_range(data: pd.DataFrame,
     return lower_filtering_bound, upper_filtering_bound
 
 
-def clean_outliers_iqr(data: pd.DataFrame):
-    pass
+def clean_outliers_iqr(data: pd.DataFrame,
+                       iqr_columns: list):
+    """
+    Remove outliers from the columns 'iqr_columns' based on the IQR
+    :param data: Pandas DataFrame of data
+    :param iqr_columns: List of columns to be cleaned
+    :return: Pandas DataFrame of cleaned data
+    """
+
+    logger.info('clean_outliers_iqr - Start')
+
+    try:
+
+        logger.info('clean_outliers_iqr - Computing the IQR lower and upper bounds')
+
+        # Compute the IQR lower and upper bounds
+        lower_filtering_bound, upper_filtering_bound = compute_interquartile_range(data,
+                                                                                   iqr_columns)
+
+    except Exception as e:
+
+        logger.error('clean_outliers_iqr - Unable to compute the IQR lower and upper bounds')
+        logger.error(e)
+        sys.exit(1)
+
+    else:
+
+        logger.info('clean_outliers_iqr - Successfully computed the IQR lower and upper bounds')
+
+    try:
+
+        logger.info('clean_outliers_iqr - Cleaning outliers')
+
+        # Cleaning the outliers
+        data_cleaned_outliers = data[~((data[iqr_columns] < lower_filtering_bound) |
+                                       (data[iqr_columns] > upper_filtering_bound)).any(axis=1)].reset_index(drop=True)
+
+    except Exception as e:
+
+        logger.error('clean_outliers_iqr - Unable to compute to clean outliers')
+        logger.error(e)
+        sys.exit(1)
+
+    else:
+
+        logger.info('clean_outliers_iqr - Successfully cleaned outliers')
+
+    finally:
+
+        logger.info('clean_outliers_iqr - End')
+
+    return data_cleaned_outliers
+
+
+
 
