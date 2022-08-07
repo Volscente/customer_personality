@@ -157,8 +157,8 @@ def compute_interquartile_range(data: pd.DataFrame,
         logger.info('compute_interquartile_range - Computing the upper and lower bounds')
 
         # Compute the lower and upper filtering bounds
-        lower_filtering_bound = q1 - 1.5 * iqr
-        upper_filtering_bound = q3 + 1.5 * iqr
+        lower_filtering_bound = q1 - margin * iqr
+        upper_filtering_bound = q3 + margin * iqr
 
     except Exception as e:
 
@@ -175,4 +175,8 @@ def compute_interquartile_range(data: pd.DataFrame,
         logger.info('compute_interquartile_range - End')
 
     return lower_filtering_bound, upper_filtering_bound
+
+
+def clean_outliers_iqr(data: pd.DataFrame):
+    pass
 
