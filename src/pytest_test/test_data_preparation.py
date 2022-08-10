@@ -137,6 +137,12 @@ def test_compute_interquartile_range(test_data: pd.DataFrame,
 def test_clean_outliers_iqr(test_data: pd.DataFrame,
                             test_iqr_column: list,
                             expected_records: int):
+    """
+    Test the function src.data_preparation.dp_utils.clean_outliers_iqr
+    :param test_data: Pandas DataFrame of test data
+    :param test_iqr_column: List of column on which clean outliers
+    :param expected_records: Integer expected number of remaining records
+    """
 
     # Clean outliers
     cleaned_test_data = clean_outliers_iqr(test_data,
