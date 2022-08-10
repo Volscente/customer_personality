@@ -231,8 +231,8 @@ def clean_outliers_iqr(data: pd.DataFrame,
     return data_cleaned_outliers
 
 
-def year_birth_intervals(data: pd.DataFrame,
-                         n_intervals: int) -> pd.DataFrame:
+def compute_year_birth_intervals(data: pd.DataFrame,
+                                 n_intervals: int) -> pd.DataFrame:
 
     pass
 
