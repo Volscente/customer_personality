@@ -8,7 +8,8 @@ import os
 # Set root path
 os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 
-from src.data_preparation.dp_utils import read_data, remove_useless_columns, compute_interquartile_range
+from src.data_preparation.dp_utils import read_data, remove_useless_columns, compute_interquartile_range, \
+    clean_outliers_iqr
 from src.pytest_test.test_data_preparation_fixtures import test_configuration, test_data
 
 
@@ -130,6 +131,15 @@ def test_compute_interquartile_range(test_data: pd.DataFrame,
     assert computed_lower_bound == expected_lower_bound and computed_upper_bound == expected_upper_bound
 
 
-def test_clean_outliers_iqr(test_data: pd.DataFrame):
+@pytest.mark.parametrize('test_iqr_column, expected_records', [
+    (['Income'], 19)
+])
+def test_clean_outliers_iqr(test_data: pd.DataFrame,
+                            test_iqr_column: list,
+                            expected_records: int):
 
-    pass
+    # Clean outliers
+    cleaned_test_data = clean_outliers_iqr(test_data,
+                                           test_iqr_column)
+
+    assert len(cleaned_test_data) == expected_records
