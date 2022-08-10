@@ -7,7 +7,7 @@ os.chdir(os.environ['CUSTOMER_PERSONALITY_PATH'])
 # Import Package Modules
 from src.utils.utils import read_configuration
 from src.logging_module.logging_module import get_logger
-from src.data_preparation.dp_utils import read_data, remove_useless_columns
+from src.data_preparation.dp_utils import read_data, remove_useless_columns, clean_outliers_iqr
 
 
 class DataPreparation:
@@ -44,4 +44,8 @@ class DataPreparation:
 
         # Remove useless columns
         self.data = remove_useless_columns(self.data, self.config['useless_columns'])
+
+        # Clean outliers
+        self.data = clean_outliers_iqr(self.data,
+                                       self.config['iqr_columns'])
 
