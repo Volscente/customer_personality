@@ -178,7 +178,7 @@ def compute_interquartile_range(data: pd.DataFrame,
 
 
 def clean_outliers_iqr(data: pd.DataFrame,
-                       iqr_columns: list):
+                       iqr_columns: list) -> pd.DataFrame:
     """
     Remove outliers from the columns 'iqr_columns' based on the IQR
     :param data: Pandas DataFrame of data
@@ -231,5 +231,8 @@ def clean_outliers_iqr(data: pd.DataFrame,
     return data_cleaned_outliers
 
 
+def year_birth_intervals(data: pd.DataFrame,
+                         n_intervals: int) -> pd.DataFrame:
 
+    pass
 
