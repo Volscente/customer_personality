@@ -129,3 +129,7 @@ def test_compute_interquartile_range(test_data: pd.DataFrame,
 
     assert computed_lower_bound == expected_lower_bound and computed_upper_bound == expected_upper_bound
 
+
+def test_clean_outliers_iqr(test_data: pd.DataFrame):
+
+    pass
