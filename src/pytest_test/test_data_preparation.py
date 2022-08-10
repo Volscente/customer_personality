@@ -132,7 +132,8 @@ def test_compute_interquartile_range(test_data: pd.DataFrame,
 
 
 @pytest.mark.parametrize('test_iqr_column, expected_records', [
-    (['Income'], 19)
+    (['Income'], 19),
+    (['Year_Birth'], 19)
 ])
 def test_clean_outliers_iqr(test_data: pd.DataFrame,
                             test_iqr_column: list,
@@ -147,5 +148,4 @@ def test_clean_outliers_iqr(test_data: pd.DataFrame,
     # Clean outliers
     cleaned_test_data = clean_outliers_iqr(test_data,
                                            test_iqr_column)
-
     assert len(cleaned_test_data) == expected_records
